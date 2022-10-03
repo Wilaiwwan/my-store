@@ -18,7 +18,9 @@ export default function Footer() {
     >
       <Grid
         item
-        xs={4}
+        xs={12}
+        sm={10}
+        md={5}
         sx={{
           padding: "20px",
         }}

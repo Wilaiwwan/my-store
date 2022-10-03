@@ -2,6 +2,7 @@ import React from "react";
 import { popularProducts } from "../data";
 import Product from "./Product";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Box } from "@mui/material";
 
 export default function Products() {
   const location = useLocation();
@@ -11,12 +12,12 @@ export default function Products() {
   console.log(searchCate);
 
   return (
-    <div
-      style={{
-        padding: "20px",
+    <Box
+      sx={{
+        padding: { xs: "10px 0px", md: "10px 50px", lg: "20px 30px" },
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "space-between",
+        justifyContent: { xs: "center", md: "space-between", lg: "start" },
       }}
     >
       {popularProducts
@@ -26,6 +27,6 @@ export default function Products() {
         .map((item) => (
           <Product item={item} key={item.id} />
         ))}
-    </div>
+    </Box>
   );
 }

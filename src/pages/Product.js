@@ -14,7 +14,6 @@ export default function Product() {
   const [addItem, setAddItem] = useState(1);
   const [productInCart, setproductInCart] = useState([]);
 
-
   useEffect(() => {
     const Products = JSON.parse(localStorage.Products || null);
     if (Products) {
@@ -84,32 +83,40 @@ export default function Product() {
     <Box sx={{ display: "flex", padding: "50px" }}>
       <Grid container>
         <Grid item xs={12} lg={6}>
-          <div style={{ flex: 1, backgroundColor: "#f5fbfd" }}>
+          <div
+            style={{
+              flex: 1,
+              backgroundColor: "#f5fbfd",
+              justifyContent: "center",
+              display: "flex",
+            }}
+          >
             <img
               src={data.img}
               style={{
-                width: "100%",
-                height: "auto",
-                minHeight: "80vh",
-                objectFit: "cover",
+                width: "50%",
+                height: "50%",
+                // minHeight: "80vh",
+                // objectFit: "cover",
               }}
             />
           </div>
         </Grid>
         <Grid item xs={12} lg={6}>
-          <div style={{ padding: "0px 50px" }}>
+          <Box sx={{ padding: { xs: 0, md: "0px 50px" } }}>
             <h1 style={{ fontWeight: "200" }}>{data.title}</h1>
             <p style={{ margin: "20px 0px" }}>{data.desc}</p>
             <span style={{ fontWeight: "100", fontSize: "40px" }}>
               $ {data.price}
             </span>
-            <div
-              style={{
-                width: "60%",
+            <Box
+              sx={{
+                width: { xs: "100%", md: "60%" },
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
                 marginTop: "30px",
+                flexDirection: { xs: "column", sm: "row" },
               }}
             >
               <div
@@ -119,19 +126,8 @@ export default function Product() {
                   fontWeight: "700",
                 }}
               >
-                {/* <div
-                  style={{
-                    corsur: "pointer",
-                    "&:hover": {
-                      width: "25px",
-                      height: "25px",
-                      backgroundColor: "whitesmoke",
-                      borderRadius: "20px",
-                    },
-                  }}
-                > */}
                 <RemoveIcon onClick={() => setAddItem(addItem - 1)} />
-                {/* </div> */}
+
                 <span
                   style={{
                     minWidth: "30px",
@@ -165,8 +161,8 @@ export default function Product() {
               >
                 ADD TO CART
               </button>
-            </div>
-          </div>
+            </Box>
+          </Box>
         </Grid>
       </Grid>
     </Box>
