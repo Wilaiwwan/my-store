@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import ProductForCart from "../components/ProductForCart";
 import Swal from "sweetalert2";
@@ -69,8 +69,8 @@ export default function Cart() {
           ))}
       </Grid>
       <Grid item xs={12} lg={3}>
-        <div
-          style={{
+        <Box
+          sx={{
             flex: 1,
             border: "0.5px solid lightgray",
             borderRadius: "10px",
@@ -80,7 +80,7 @@ export default function Cart() {
             margin: "auto",
             top: "15%",
             zIndex: 2,
-            width: "220px",
+            width: "auto",
           }}
         >
           <h2 style={{ fontWeight: "200" }}>ORDER SUMMARY</h2>
@@ -106,7 +106,7 @@ export default function Cart() {
           >
             CHECKOUT NOW
           </button>
-        </div>
+        </Box>
       </Grid>
     </Grid>
   );

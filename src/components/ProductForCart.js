@@ -30,7 +30,13 @@ export default function ProductForCart(props) {
   return (
     <Card sx={{ margin: "10px 0px", padding: "10px" }}>
       <Grid container spacing={1}>
-        <Grid item xs={12} sm={5} md={4}>
+        <Grid
+          item
+          xs={12}
+          sm={5}
+          md={4}
+          sx={{ display: "flex", justifyContent: "center" }}
+        >
           <Paper
             elevation={1}
             sx={{
@@ -48,8 +54,10 @@ export default function ProductForCart(props) {
             <img src={props?.item?.img} style={{ width: "200px" }} />
           </Paper>
         </Grid>
-        <Grid item xs={12} sm={6} md={6}>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <Grid item xs={12} sm={6} md={6} sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}>
             <div
               style={{ display: "flex", flexDirection: "column", width: "70%" }}
             >
@@ -61,9 +69,11 @@ export default function ProductForCart(props) {
                 <b>description:</b> &nbsp;{props?.item?.desc}
               </span>
             </div>
-          </div>
         </Grid>
-        <Grid item xs={12} sm={1} md={2}>
+        <Grid item xs={12} sm={1} md={2} sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}>
           <div
             style={{
               display: "flex",
