@@ -73,6 +73,8 @@ export default function ProductForCart(props) {
         <Grid item xs={12} sm={1} md={2} sx={{
           display: "flex",
           justifyContent: "center",
+          flexDirection:"column",
+          alignItems:"center"
         }}>
           <div
             style={{
