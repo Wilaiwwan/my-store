@@ -32,14 +32,17 @@ export default function Navbar() {
               justifyContent: "space-between",
             }}
           >
-            <Grid item xs={6} lg={2} sx={{ flex: 1, alignItems: "center" }}>
+            <Grid item xs={12} lg={2} sx={{ flex: 1, alignItems: "center" }}>
               <h3>MY STORE</h3>
             </Grid>
             <Grid
               item
-              xs={6}
+              xs={12}
               lg={8}
-              sx={{ display: "flex", justifyContent: "center" }}
+              sx={{
+                display: "flex",
+                justifyContent: { xs: "start", md: "center" },
+              }}
             >
               <div
                 style={{
@@ -121,11 +124,11 @@ export default function Navbar() {
 
             <Grid
               item
-              xs={6}
+              xs={12}
               lg={2}
               sx={{
                 display: "flex",
-                justifyContent: "end",
+                justifyContent: { xs: "start", md: "end" },
               }}
             >
               <IconButton onClick={() => navigate("/Cart")}>

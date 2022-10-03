@@ -30,7 +30,7 @@ export default function ProductForCart(props) {
   return (
     <Card sx={{ margin: "10px 0px", padding: "10px" }}>
       <Grid container spacing={1}>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} sm={5} md={4}>
           <Paper
             elevation={1}
             sx={{
@@ -48,7 +48,7 @@ export default function ProductForCart(props) {
             <img src={props?.item?.img} style={{ width: "200px" }} />
           </Paper>
         </Grid>
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} sm={6} md={6}>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div
               style={{ display: "flex", flexDirection: "column", width: "70%" }}
@@ -57,43 +57,42 @@ export default function ProductForCart(props) {
                 <b>Product:</b> &nbsp; {props?.item?.title}
               </span>
 
-              <span>
+              <span style={{ marginTop: "10px" }}>
                 <b>description:</b> &nbsp;{props?.item?.desc}
               </span>
             </div>
-
-            <div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  fontWeight: "700",
-                }}
-              >
-                <RemoveIcon onClick={() => handleChangeProduct(addItem - 1)} />
-                <span
-                  style={{
-                    minWidth: "30px",
-                    width: "auto",
-                    height: "30px",
-                    borderRadius: "10px",
-                    border: "1px solid teal",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    margin: "0px 5px",
-                    padding: "2px",
-                  }}
-                >
-                  {addItem}
-                </span>
-                <AddIcon onClick={() => handleChangeProduct(addItem + 1)} />
-              </div>
-              <p style={{ fontWeight: "200", fontSize: "30px" }}>
-                $ {props?.item?.price}
-              </p>
-            </div>
           </div>
+        </Grid>
+        <Grid item xs={12} sm={1} md={2}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              fontWeight: "700",
+            }}
+          >
+            <RemoveIcon onClick={() => handleChangeProduct(addItem - 1)} />
+            <span
+              style={{
+                minWidth: "30px",
+                width: "auto",
+                height: "30px",
+                borderRadius: "10px",
+                border: "1px solid teal",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                margin: "0px 5px",
+                padding: "2px",
+              }}
+            >
+              {addItem}
+            </span>
+            <AddIcon onClick={() => handleChangeProduct(addItem + 1)} />
+          </div>
+          <p style={{ fontWeight: "200", fontSize: "30px" }}>
+            $ {props?.item?.price}
+          </p>
         </Grid>
       </Grid>
     </Card>
