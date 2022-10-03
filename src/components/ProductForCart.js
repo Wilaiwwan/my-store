@@ -29,8 +29,8 @@ export default function ProductForCart(props) {
 
   return (
     <Card sx={{ margin: "10px 0px", padding: "10px" }}>
-      <Grid container>
-        <Grid item xs={12} lg={6}>
+      <Grid container spacing={1}>
+        <Grid item xs={12} md={4}>
           <Paper
             elevation={1}
             sx={{
@@ -48,11 +48,20 @@ export default function ProductForCart(props) {
             <img src={props?.item?.img} style={{ width: "200px" }} />
           </Paper>
         </Grid>
-        <Grid item xs={12} lg={6}>
+        <Grid item xs={12} md={8}>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <span>
-              <b>Product:</b> &nbsp; {props?.item?.title}
-            </span>
+            <div
+              style={{ display: "flex", flexDirection: "column", width: "70%" }}
+            >
+              <span>
+                <b>Product:</b> &nbsp; {props?.item?.title}
+              </span>
+
+              <span>
+                <b>description:</b> &nbsp;{props?.item?.desc}
+              </span>
+            </div>
+
             <div>
               <div
                 style={{
