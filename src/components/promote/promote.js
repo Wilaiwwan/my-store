@@ -1,6 +1,6 @@
 import { Box, Card, Grid } from "@mui/material";
 import React from "react";
-import { sliderItems } from "../data";
+import { sliderItems } from "../../data";
 
 export default function Promote() {
   return (
@@ -8,7 +8,7 @@ export default function Promote() {
       <Grid item xs={12} lg={6}>
         <Box
           sx={{
-            height: "100%",
+            height: { xs: "200px", lg: "100%" },
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -19,13 +19,17 @@ export default function Promote() {
             style={{
               width: "100%",
               height: "100%",
+              objectFit: "contain",
+              zIndex: 99,
+              marginLeft: "350px",
             }}
+            alt={sliderItems[0].title}
           />
         </Box>
       </Grid>
       <Grid item xs={12} lg={6}>
-        <div
-          style={{
+        <Box
+          sx={{
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
@@ -36,7 +40,7 @@ export default function Promote() {
         >
           <h1 style={{ fontWeight: "200" }}>{sliderItems[0].title}</h1>
           <p style={{ margin: "20px 0px" }}>{sliderItems[0].desc}</p>
-        </div>
+        </Box>
       </Grid>
     </Grid>
   );

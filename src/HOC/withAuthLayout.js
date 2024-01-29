@@ -1,4 +1,4 @@
-import AuthLayout from "../common/AuthLayout";
+import AuthLayout from "../components/layouts/AuthLayout/AuthLayout";
 
 function withAuthLayout(WrapperComponent) {
     return (

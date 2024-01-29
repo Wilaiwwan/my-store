@@ -8,7 +8,6 @@ export default function ProductForCart(props) {
   item.push(props?.item);
 
   const [addItem, setAddItem] = useState(props?.item?.total);
-
   const handleChangeProduct = (total) => {
     setAddItem(total);
 
@@ -54,28 +53,40 @@ export default function ProductForCart(props) {
             <img src={props?.item?.img} style={{ width: "200px" }} />
           </Paper>
         </Grid>
-        <Grid item xs={12} sm={6} md={6} sx={{
-          display: "flex",
-          justifyContent: "center",
-        }}>
-            <div
-              style={{ display: "flex", flexDirection: "column", width: "70%" }}
-            >
-              <span>
-                <b>Product:</b> &nbsp; {props?.item?.title}
-              </span>
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={6}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <div
+            style={{ display: "flex", flexDirection: "column", width: "70%" }}
+          >
+            <span>
+              <b>Product:</b> &nbsp; {props?.item?.title}
+            </span>
 
-              <span style={{ marginTop: "10px" }}>
-                <b>description:</b> &nbsp;{props?.item?.desc}
-              </span>
-            </div>
+            <span style={{ marginTop: "10px" }}>
+              <b>description:</b> &nbsp;{props?.item?.desc}
+            </span>
+          </div>
         </Grid>
-        <Grid item xs={12} sm={1} md={2} sx={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection:"column",
-          alignItems:"center"
-        }}>
+        <Grid
+          item
+          xs={12}
+          sm={1}
+          md={2}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <div
             style={{
               display: "flex",

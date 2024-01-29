@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import { sliderItems } from "../data";
+import { sliderItems } from "../../data";
 
 export default function Slider() {
   const [slideIndex, setSlideIndex] = useState(0);

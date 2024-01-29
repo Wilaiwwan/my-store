@@ -33,7 +33,7 @@ export default function Navbar() {
             }}
           >
             <Grid item xs={12} md={2} sx={{ flex: 1, alignItems: "center" }}>
-              <h3>MY STORE</h3>
+              <h3><a href="/" style={{ textDecoration: "none", color: "inherit" }}>MY STORE</a></h3>
             </Grid>
             <Grid
               item

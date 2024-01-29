@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Products from "./components/Products";
+import Products from "./components/all-Products/all-Products";
 import withAuthLayout from "./HOC/withAuthLayout";
-import Cart from "./pages/Cart";
-import Category from "./pages/Category";
-import Home from "./pages/Home";
-import Product from "./pages/Product";
-import ProductList from "./pages/ProductList";
+import Cart from "./pages/cart/cart";
+import Category from "./pages/category/category";
+import Home from "./pages/home/home";
+import Product from "./pages/productDetail/productDetail";
+import ProductList from "./pages/productList/productList";
 
 function App() {
   return (

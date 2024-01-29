@@ -16,10 +16,19 @@ export default function Product() {
 
   useEffect(() => {
     const Products = JSON.parse(localStorage.Products || null);
+    handleScrollToTop();
+
     if (Products) {
       setproductInCart(Products);
     }
   }, []);
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   const handleAddToCart = () => {
     if (productInCart.length > 0) {

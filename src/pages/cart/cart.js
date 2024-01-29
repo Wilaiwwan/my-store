@@ -1,6 +1,6 @@
 import { Box, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import ProductForCart from "../components/ProductForCart";
+import ProductForCart from "../../components/productForCart/productForCart";
 import Swal from "sweetalert2";
 
 export default function Cart() {
@@ -31,26 +31,47 @@ export default function Cart() {
   };
 
   useEffect(() => {
-    const Products = JSON.parse(localStorage.Products || null);
+    const Products = JSON.parse(localStorage.Products || '[]');
     if (Products) {
       setProductInCart(Products);
       sumPrice(Products);
     }
-  }, []);
+  }, [productInCart]);
 
   useEffect(() => {
-    sumPrice();
-  }, [productInCart]);
+    return () => {
+      handleScrollToTop();
+    };
+  }, []);
+  
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const handleCheckOut = () => {
     Swal.fire({
       title: "success!",
       html: "<i>We will send you details via email.!</i>",
       icon: "success",
+    }).then((result) => {
+      if (result.isConfirmed || result.dismiss === Swal.DismissReason.timer) {
+        localStorage.removeItem("Products");
+        // window.location.reload(false);
+        window.location.href = "/";
+      }
     });
+  };
 
-    localStorage.removeItem("Products");
-    window.location.reload(false);
+  const dynamicStyles = {
+    width: "100%",
+    padding: "10px",
+    backgroundColor: subTotal === 0 ? "gray" : "black",
+    color: "white",
+    fontWeight: "600",
   };
 
   return (
@@ -95,14 +116,9 @@ export default function Cart() {
             <span>$ {subTotal}</span>
           </div>
           <button
-            style={{
-              width: "100%",
-              padding: "10px",
-              backgroundColor: "black",
-              color: "white",
-              fontWeight: "600",
-            }}
+            style={dynamicStyles}
             onClick={() => handleCheckOut()}
+            disabled={subTotal === 0}
           >
             CHECKOUT NOW
           </button>

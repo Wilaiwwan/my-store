@@ -1,6 +1,6 @@
 import React from "react";
-import { popularProducts } from "../data";
-import Product from "./Product";
+import { popularProducts } from "../../data";
+import Product from "../products/product";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
 
